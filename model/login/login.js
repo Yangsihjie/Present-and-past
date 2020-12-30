@@ -33,3 +33,10 @@ export function UserCodeLogin(phone,code){
 		}
 	})
 }
+//退出登录
+export function LoginOut(){
+	return uniRequest({
+		url:'user/logout',
+		method:'POST'
+	})
+}

@@ -11,10 +11,15 @@ import config from '../config.js'
 // #endif
 // uniRequest.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 // uniRequest.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
-
 // 请求拦截
 uniRequest.interceptors.request.use(
   request => {
+	  let token = uni.getStorageSync('token')
+	  console.log(token)
+	 if(token){
+	  request.headers.token = token
+	  // { 'Authorization' : token}
+	 }
     //配置基本信息  
     return request;
   },

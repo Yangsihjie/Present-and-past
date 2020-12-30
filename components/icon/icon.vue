@@ -1,6 +1,6 @@
 <template>
 		<!-- icon图标组件 -->
-		<text  :class="[`iconfont ${iconName}`]" :style="{fontSize: `${iconSize}rpx`, color:`${iconColor}` }"></text>
+		<text @click="Father" :class="[`iconfont ${iconName}`]" :style="{fontSize: `${iconSize}rpx`, color:`${iconColor}` }"></text>
 </template>
 
 <script>
@@ -17,6 +17,11 @@
 			iconSize:{
 				type:[Number,String],
 				default:40
+			}
+		},
+		methods:{
+			Father(){
+				this.$emit('Father')
 			}
 		}
 	}

@@ -37,6 +37,9 @@
 </script>
 
 <style>
+	.nav{
+		background-color: #FFFFFF;
+	}
 	scroll-view{
 		width: 750rpx;
 	}

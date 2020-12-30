@@ -1,12 +1,10 @@
 <template>
 	<!-- 布局组件 -->
 	<view class="box">
-
-			
 		
-			<swiper class="swiper" @change="tabChange"  :current="fIndex" >
+		<swiper class="swiper" @change="tabChange" :style="{height:`${calHeight}rpx`}" :current="fIndex" >
 			<swiper-item v-for="i in 6">
-				<scroll-view scroll-x="true">
+				<scroll-view scroll-y="true"  lower-threshold="50px" @scrolltolower="PullRefresh" :style="{height:`${calHeight}rpx`}">
 
 					<view class="box_item" v-for="(item,index) in userList" :key="index">
 						<!-- 标题 -->
@@ -18,7 +16,7 @@
 										{{item.user.username}}
 									</view>
 									<view class="font-time">
-										{{item.create_time}}
+										{{item.create_time |timeFilter}}
 									</view>
 								</view>
 							</view>
@@ -55,6 +53,7 @@
 								分享
 							</view>
 						</view>
+					
 					</view>
 
 				</scroll-view>
@@ -75,15 +74,51 @@
 			fIndex:{
 				type:Number,
 				default:0
+			},
+			calHeight:{
+				type:[String,Number],
+				default:0
 			}
 		},
 		methods:{
 			tabChange(e){
 				this.$emit('changeSwiper',e.detail.current)
+			},
+			//上拉到固定像素触发的事件
+			PullRefresh(){
+				this.$emit('PullRefresh')
 			}
 		},
 		mounted() {
-		}
+		},
+		filters: {
+		   // 时间过滤
+		   timeFilter: (val)=> {
+		    let hhour = ''
+		    let time = new Date(val * 1000)
+		    let year = time.getFullYear()
+		    let month = time.getMonth()+1
+		    if(month < 10) {
+		     month = '0' + month;
+		    }
+		    let day = time.getDate()
+		    if(day < 10) {
+		     day = '0' + day;
+		    }
+		    let hour = time.getHours()
+		    if(hour <= 12) {
+		     hhour = '上午';
+		    }else {
+		     hour = hour - 12
+		     hhour = '下午'
+		    }
+		    let minute = time.getMinutes()
+		    if(minute < 10) {
+		     minute = '0' + minute;
+		    }
+		    return `${year}-${month}-${day} ${hhour} ${hour}:${minute}`
+		   }
+		  },
 	}
 </script>
 
@@ -117,17 +152,9 @@
 	.box {
 		background-color: #f5f5f5;
 		padding: 10rpx 0;
-		position: absolute;
-		top: 150rpx;
-		left: 0;
-		right: 0;
-		height: 4000rpx;
+		padding-top: 210rpx;
 	}
 
-	.swiper{
-		width: 100%;
-		height: 100%;
-	}
 	.box_item {
 		margin: 20rpx 0;
 		background-color: #FFFFFF;
@@ -136,7 +163,5 @@
 	.img image {
 		border-radius: 6rpx;
 	}
-	scroll-view{
-		height: 100%;
-	}
+
 </style>

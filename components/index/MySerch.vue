@@ -12,6 +12,9 @@
 </script>
 
 <style>
+	.nav{
+		background-color: #FFFFFF;
+	}
 	.topInput {
 		border-radius: 6rpx;
 		background-color: #f7f7f7;

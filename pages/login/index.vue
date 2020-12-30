@@ -2,7 +2,7 @@
 	<view class="login">
 		<view :style="{height: `${statusBarHeight}px`}"></view>
 		<view class="back p-2">
-			<my-icon iconName="icon-guanbi" iconSize="50"></my-icon>
+			<my-icon @Father="Father" iconName="icon-guanbi" iconSize="50"></my-icon>
 		</view>
 		<!-- 账号密码登录 -->
 		<view class="id" v-if="loginShow">
@@ -42,12 +42,13 @@
 			</view>
 			<view class="form">
 				<view class="input">
-					<input type="text" placeholder="手机号" v-model="userMobile"  />
+					<input class="InpmtCode" type="text" placeholder="手机号" v-model="userMobile"  />
+					<text class="addCode">+86</text>
 				</view>
 				<view class="input">
 					<input type="text" placeholder="请输入验证码" v-model="userCode"  />
 					<text class="Wpassword noHold" v-show="!hold" @click="GetCode">获取验证码</text>
-					<text class="Wpassword" v-show="hold">请稍等 {{second}} 秒后重新发送</text>
+					<text class="Wpassword noHold px-2" v-show="hold">   {{second}}   </text>
 				</view>
 			</view>
 			<view class="btn">
@@ -164,7 +165,7 @@
 				const {data} = await UserCodeLogin(this.userMobile,this.userCode)
 				if(data.msg == '登录成功'){ //登录成功
 					uni.setStorageSync('token',data.data.token)
-					uni.setStorageSync('user',data.data.userinfo)
+					uni.setStorageSync('user',data.data)
 					uni.showToast({
 						title:data.msg
 					})
@@ -176,6 +177,12 @@
 						title:'登录失败'
 					})
 				}
+			},
+			//点击icon退出
+			Father(){
+				uni.switchTab({
+					url:'../home/index'
+				})
 			}
 		}
 	}
@@ -288,5 +295,15 @@
 		padding: 10rpx 20rpx;
 		border-radius: 8rpx;
 		color: #FFFFFF;
+	}
+	.InpmtCode{
+	text-indent: 80rpx;
+	}
+	.addCode{
+		position: absolute;
+		left: 50rpx;
+		top: 46rpx;
+		font-size: 30rpx;
+		
 	}
 </style>
