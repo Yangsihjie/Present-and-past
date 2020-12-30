@@ -1,7 +1,7 @@
 <template>
 	<!-- 设置页面 -->
 	<view >
-		
+		<view :style="{height: `${statusBarHeight}px`}"></view>
 		<view class="flex justify-between align-center p-2">
 			<view>
 				<navigator url="../home/index" open-type="switchTab">
@@ -51,13 +51,22 @@
 	export default{
 		data(){
 			return{
-				
+				statusBarHeight: this.$statusBarHeight,
 			}
 		},
 		methods:{
 			//退出登录
 			async LogOut(){
 				const {data} = await LoginOut()
+				
+				uni.showToast({
+					title:'退出成功'
+				})
+				uni.switchTab({
+					url:'../home/index'
+				})
+				uni.removeStorageSync('token')
+				
 				console.log(data)
 			}
 		}

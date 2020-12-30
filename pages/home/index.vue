@@ -106,9 +106,12 @@
 			const token = uni.getStorageSync('token')
 			const user = uni.getStorageSync('user')
 			if(!token){
-				// uni.navigateTo({
-				// 	url:'../login/index'
-				// })
+				console.log(this.token)
+				this.token = ''
+				uni.showToast({
+					title:'未登录',
+					icon:'none'
+				})
 			}else{
 				this.token = token
 				this.user = user

@@ -20,6 +20,9 @@
 		},
 		{
 			"path":"pages/SetUser/index"
+		},
+		{
+			"path":"pages/AppTopic/index"
 		}
 	],
 	"globalStyle": {
