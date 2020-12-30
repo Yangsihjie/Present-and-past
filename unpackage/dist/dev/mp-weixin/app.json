@@ -3,14 +3,16 @@
     "pages/index/index",
     "pages/news/index",
     "pages/paper/index",
-    "pages/home/index"
+    "pages/home/index",
+    "pages/login/index"
   ],
   "subPackages": [],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "仿糗事百科",
     "navigationBarBackgroundColor": "#FFFFFF",
-    "backgroundColor": "#FFFFFF"
+    "backgroundColor": "#FFFFFF",
+    "navigationStyle": "custom"
   },
   "tabBar": {
     "color": "#B5B5B5",
@@ -44,5 +46,7 @@
       }
     ]
   },
-  "usingComponents": {}
+  "usingComponents": {
+    "my-icon": "/components/icon/icon"
+  }
 }

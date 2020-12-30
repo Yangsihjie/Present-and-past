@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "my-serch": "/components/index/MySerch",
+    "my-nav-bar": "/components/index/Nav",
+    "my-user-list": "/components/index/bigList"
+  }
 }

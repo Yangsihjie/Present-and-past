@@ -1,13 +1,14 @@
 <template>
-	<view>
-
-		<view :style="{height: `${statusBarHeight}px`}"></view>
-		<!-- 搜索组件 -->
-		<my-serch></my-serch>
-		<!-- 导航条组件 -->
-		<my-nav-bar @Active-list="Active" :NavList="NavList"></my-nav-bar>
+	<view class="home">
+		<view class="top">
+			<view :style="{height: `${statusBarHeight}px`}"></view>
+			<!-- 搜索组件 -->
+			<my-serch></my-serch>
+			<!-- 导航条组件 -->
+			<my-nav-bar @Active-list="Active"  :Aindex="Aindex" :NavList="NavList"></my-nav-bar>
+		</view>
 		<!-- 话题组件 -->
-		<my-user-list :userList="userList"></my-user-list>
+		<my-user-list @changeSwiper="changeSwiper" :fIndex="fIndex" :userList="userList"></my-user-list>
 		
 	</view>
 </template>
@@ -34,6 +35,8 @@
 				userList:[],
 				userId:1,
 				userpage:1,
+				fIndex:0,
+				Aindex:0,
 			}
 		},
 		//组件
@@ -57,10 +60,16 @@
 				} = await GetUserTock(this.userId,this.userpage)
 				this.userList = data.data.list
 			},
-			//切换数据
-			Active(data){
-				console.log(data.id)
+			//nav切换数据
+			Active(data,index){
 				this.userId = data.id
+				this.Aindex = index
+				this.fIndex = index
+			},
+			//屏幕滑动切换数据
+			changeSwiper(index){
+				this.Aindex = index
+				this.userId = index +1 
 				this.GetUserList()
 			}
 
@@ -76,5 +85,19 @@
 </script>
 
 <style>
-
+/* 	uni-page-body{
+		height: 100%;
+	}
+	.home{
+		height: 100%;
+	} */
+.top{
+	height: 150rpx;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+	background-color: #FFFFFF;
+}
 </style>

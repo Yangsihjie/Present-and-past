@@ -1,0 +1,49 @@
+
+.logo {
+	width: 80rpx;
+	height: 80rpx;
+	-webkit-border-radius: 50%;
+	        border-radius: 50%;
+}
+.pink {
+	background-color: #fe5a7d;
+	color: #fff;
+	font-size: 30rpx;
+	margin: 0 20rpx;
+}
+.font_desc {
+	font-weight: 500;
+	font-size: 35rpx;
+}
+.font-time {
+	color: #a5a29b;
+	font-size: 26rpx;
+}
+.font_md {
+	font-size: 32rpx;
+}
+.box {
+	background-color: #f5f5f5;
+	padding: 10rpx 0;
+	position: absolute;
+	top: 150rpx;
+	left: 0;
+	right: 0;
+	height: 4000rpx;
+}
+.swiper{
+	width: 100%;
+	height: 100%;
+}
+.box_item {
+	margin: 20rpx 0;
+	background-color: #FFFFFF;
+}
+.img image {
+	-webkit-border-radius: 6rpx;
+	        border-radius: 6rpx;
+}
+scroll-view{
+	height: 100%;
+}
+

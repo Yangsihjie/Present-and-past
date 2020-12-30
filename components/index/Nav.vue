@@ -1,10 +1,10 @@
 <template>
 	<view class="nav">
 		
-		<scroll-view scroll-x="true" >
+		<scroll-view scroll-x="true" show-scrollbar="flase" >
 			<view class="flex justify-between navF">
-				<text @click="Active(item)" class="flex-1 px-5 font-weight-bold p-1"
-				 :class="[ NavId == item.id ? 'navList' : '' ]" v-for="(item,index) in NavList">{{item.classname}}</text>
+				<text @click="Active(item,index)" class="flex-1 px-5 font-weight-bold p-1"
+				 :class="{ 'navList' : Aindex == index }" v-for="(item,index) in NavList">{{item.classname}}</text>
 			</view>
 		</scroll-view>
 	
@@ -18,17 +18,19 @@
 			NavList:{
 				type:Array,
 				default:[],
+			},
+			Aindex:{
+				type:Number,
+				default:0
 			}
 		},
 		data(){
 			return{
-			NavId:1
 			}
 		},
 		methods:{
-			Active(data){
-				this.NavId = data.id
-				this.$emit('Active-list',data)
+			Active(data,index){
+				this.$emit('Active-list',data,index)
 			}
 		}
 	}

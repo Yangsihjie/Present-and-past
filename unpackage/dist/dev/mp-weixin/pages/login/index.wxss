@@ -1,0 +1,94 @@
+
+.login {
+	width: 100%;
+	height: 500rpx;
+}
+.back {
+	height: 100rpx;
+}
+.id_title {
+	line-height: 250rpx;
+	text-align: center;
+	font-size: 50rpx;
+	color: #6d6c67;
+}
+.form {}
+.input {
+	padding: 20rpx 0;
+	position: relative;
+}
+.Wpassword {
+	position: absolute;
+	top: 44rpx;
+	right: 80rpx;
+	color: #bbbbbb;
+}
+input {
+	width: 90%;
+	margin: 0 auto;
+	height: 100rpx;
+	border-bottom: 1px solid #f4f4f4;
+}
+.button {
+	margin: 50rpx auto 0 auto;
+	width: 90%;
+	background-color: #ffb1a4;
+	height: 100rpx;
+	text-align: center;
+	line-height: 100rpx;
+	color: #FFFFFF;
+	font-size: 35rpx;
+	-webkit-border-radius: 50rpx;
+	        border-radius: 50rpx;
+}
+.login_pas {
+	line-height: 150rpx;
+	text-align: center;
+}
+.lo {
+	color: #33677c;
+	font-size: 30rpx;
+	font-weight: 500;
+}
+.gang {
+	color: #bbbbbb;
+	padding: 0 20rpx;
+}
+.social {
+	color: #bbbbbb;
+}
+.weiXin {
+	margin-top: 30rpx;
+	padding: 0 140rpx;
+}
+.LoginWeiXIn {
+	background-color: #2ad19b;
+	text-align: center;
+	line-height: 80rpx;
+	width: 80rpx;
+	height: 80rpx;
+	-webkit-border-radius: 50%;
+	        border-radius: 50%;
+}
+.lan {
+	background-color: #2caefc;
+}
+.huang {
+	background-color: #fc772a;
+}
+.Btext {
+	color: #bbbbbb;
+	text-align: center;
+	line-height: 100rpx;
+}
+.BYes {
+	color: #2caefc;
+}
+.noHold{
+	background-color: #ffb1a4;
+	padding: 10rpx 20rpx;
+	-webkit-border-radius: 8rpx;
+	        border-radius: 8rpx;
+	color: #FFFFFF;
+}
+

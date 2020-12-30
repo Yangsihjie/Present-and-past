@@ -1,0 +1,11 @@
+
+.topInput {
+	-webkit-border-radius: 6rpx;
+	        border-radius: 6rpx;
+	background-color: #f7f7f7;
+	text-align: center;
+	color: #f7f7f7;
+	font-size: 20rpx;
+	height: 50rpx;
+}
+

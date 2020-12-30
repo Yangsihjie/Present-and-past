@@ -1,1 +1,1 @@
-<view>动态</view>
+<view class="con"><swiper indicator-dots="{{true}}" interval="{{3000}}" duration="{{1000}}"><block wx:for="{{5}}" wx:for-item="item" wx:for-index="index"><swiper-item><scroll-view scroll-x="true"><view class="bg-danger add">{{item}}</view></scroll-view></swiper-item></block></swiper></view>

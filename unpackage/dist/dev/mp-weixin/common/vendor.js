@@ -7888,7 +7888,7 @@ module.exports = g;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-
+throw new Error("Module build failed (from ./node_modules/@dcloudio/webpack-uni-pages-loader/lib/index.js):\nTypeError: Cannot read property 'forEach' of undefined\n    at parsePages (D:\\积云学习软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@dcloudio\\uni-cli-shared\\lib\\pages.js:189:19)\n    at Object.module.exports (D:\\积云学习软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@dcloudio\\webpack-uni-pages-loader\\lib\\index-new.js:89:5)\n    at Object.module.exports (D:\\积云学习软件\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@dcloudio\\webpack-uni-pages-loader\\lib\\index.js:49:35)");
 
 /***/ }),
 /* 5 */,

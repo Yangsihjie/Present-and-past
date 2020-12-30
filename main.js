@@ -8,6 +8,12 @@ Vue.component("MyIcon",MyIcon)
 
 //获取设备状态栏高度挂载全局、
 Vue.prototype.$statusBarHeight = uni.getSystemInfoSync().statusBarHeight
+// main.js
+
+// import Router, {RouterMount} from 'uni-simple-router';
+// Vue.use(Router)
+
+
 
 
 App.mpType = 'app'

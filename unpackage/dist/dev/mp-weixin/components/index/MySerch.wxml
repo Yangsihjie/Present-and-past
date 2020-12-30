@@ -1,0 +1,1 @@
+<view class="nav"><view class="flex justify-between px-2 align-center"><my-icon vue-id="16f33796-1" iconName="icon-qiandao" iconColor="#FEE42B" iconSize="40" bind:__l="__l"></my-icon><input class="border flex-1 mx-2 topInput" type="text" placeholder="搜索糗事"/><my-icon vue-id="16f33796-2" iconName="icon-bianji1" iconSize="40" bind:__l="__l"></my-icon></view></view>
