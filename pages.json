@@ -23,6 +23,9 @@
 		},
 		{
 			"path":"pages/AppTopic/index"
+		},
+		{
+			"path":"pages/UserRemark/index"
 		}
 	],
 	"globalStyle": {

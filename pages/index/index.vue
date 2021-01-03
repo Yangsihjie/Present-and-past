@@ -9,7 +9,7 @@
 		</view>
 		<!-- 话题组件 -->
 		<my-user-list @PullRefresh="PullRefresh" @changeSwiper="changeSwiper" :calHeight="calHeight" :fIndex="fIndex"
-		 :userList="userList"></my-user-list>
+		 :userList="userList" :GetUserList="GetUserList" ></my-user-list>
 
 	</view>
 </template>
@@ -63,6 +63,10 @@
 					data
 				} = await GetUserTock(this.userId, this.userpage)
 				this.userList = data.data.list
+				this.userList.forEach(item=>{
+					this.$set(item,'GuanZhu',false)
+				})
+				console.log(this.userList)
 			},
 			//nav切换数据
 			Active(data, index) {
@@ -105,7 +109,8 @@
 				}
 
 
-			}
+			},
+			
 
 		},
 		onShow() {

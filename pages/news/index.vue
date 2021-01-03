@@ -54,7 +54,7 @@
 							<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000">
 								<swiper-item v-for="(item,index) in banList" :key="index">
 									<view class="swiper-item">
-										<image  :src="item.src" mode="aspectFit"></image>
+										<image  :src="item.src" style="width: 100%;"></image>
 									</view>
 								</swiper-item>
 							</swiper>

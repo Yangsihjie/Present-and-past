@@ -46,3 +46,50 @@ export function GetBander(){
 		method:'GET'
 	})
 }
+
+//点赞踩一脚
+export function UserSupport(data){
+	return uniRequest({
+		url:`/support`,
+		method:	'POST',
+		data
+	})
+}
+
+//关注用户
+export function AttentionUser(follow_id){
+	return uniRequest({
+		url:`/follow`,
+		method:'POST',
+		data:{
+			follow_id
+		}
+	})
+}
+
+//进入评论页面
+export function ToUserCommit(id){
+	return uniRequest({
+		url:`/post/${id}`,
+		method:'GET'
+	})
+}
+//获取初始评论
+export function GetInitCommit(id){
+	return uniRequest({
+		url:`post/${id}/comment`,
+		method:'GET'
+	})
+}
+
+//用户确认评论页面
+export function GetUserComment(fid,data,post_id){
+	return uniRequest({
+		url:`post/comment`,
+		method:'POST',
+		data:{
+			fid,data,post_id
+		}
+		
+	})
+}
