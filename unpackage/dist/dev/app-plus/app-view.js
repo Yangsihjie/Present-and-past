@@ -3711,7 +3711,16 @@ var render = function() {
               _c(
                 "v-uni-text",
                 { staticClass: _vm._$g(19, "sc"), attrs: { _i: 19 } },
-                [_c("my-icon", { attrs: { _i: 20 } })],
+                [
+                  _c("my-icon", {
+                    attrs: { _i: 20 },
+                    on: {
+                      Father: function($event) {
+                        return _vm.$handleViewEvent($event)
+                      }
+                    }
+                  })
+                ],
                 1
               )
             ],

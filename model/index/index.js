@@ -20,3 +20,29 @@ export function GetHotList(){
 		url:`/hottopic`,
 	})
 }
+//获取所有话题
+export function GetTock(){
+	return uniRequest({
+		url:`/v1/topicclass`,
+		method:'GET'
+	})
+}
+//上传图片
+export function AddImage(imglist ='imglist[]' ,filePaths){
+	return uniRequest({
+		url:'/image/uploadmore',
+		method:'POST',
+		data:{
+			name:'imglist[]',
+			filePaths
+		}
+	})
+}
+
+//获取轮播图
+export function GetBander(){
+	return uniRequest({
+		url:'adsense/0',
+		method:'GET'
+	})
+}
